@@ -1,0 +1,21 @@
+#usda 1.0
+(
+    defaultPrim = "MatTransRed"
+    upAxis = "Z"
+)
+
+def Material "MatTransRed"
+{
+    token outputs:surface.connect = </MatTransRed/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (0.65924126, 0.0005745917, 0)
+        color3f inputs:emissiveColor = (0, 0, 0)
+        float inputs:opacity = 0.56716615
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+}
+

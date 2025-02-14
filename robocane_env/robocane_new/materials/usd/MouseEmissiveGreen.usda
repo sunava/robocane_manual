@@ -1,0 +1,21 @@
+#usda 1.0
+(
+    defaultPrim = "MouseEmissiveGreen"
+    upAxis = "Z"
+)
+
+def Material "MouseEmissiveGreen"
+{
+    token outputs:surface.connect = </MouseEmissiveGreen/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (0, 0, 0)
+        color3f inputs:emissiveColor = (0, 1, 0.0187167)
+        float inputs:opacity = 1
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+}
+

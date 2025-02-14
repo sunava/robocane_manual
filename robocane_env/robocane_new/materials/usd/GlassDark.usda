@@ -1,0 +1,21 @@
+#usda 1.0
+(
+    defaultPrim = "GlassDark"
+    upAxis = "Z"
+)
+
+def Material "GlassDark"
+{
+    token outputs:surface.connect = </GlassDark/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (0.178862, 0.178862, 0.178862)
+        color3f inputs:emissiveColor = (0, 0, 0)
+        float inputs:opacity = 1
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+}
+

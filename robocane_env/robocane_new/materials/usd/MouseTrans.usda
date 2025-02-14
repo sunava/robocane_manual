@@ -1,0 +1,21 @@
+#usda 1.0
+(
+    defaultPrim = "MouseTrans"
+    upAxis = "Z"
+)
+
+def Material "MouseTrans"
+{
+    token outputs:surface.connect = </MouseTrans/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (0.39218956, 0.30576396, 0.20498587)
+        color3f inputs:emissiveColor = (0.07432246, 0.050114565, 0.029156186)
+        float inputs:opacity = 0.70092994
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+}
+
